@@ -5,6 +5,7 @@ import os
 app = Flask(__name__)
 
 API_KEY = os.getenv("OPENROUTER_API_KEY") 
+print("DEBUG: API Key loaded:", "FOUND" if API_KEY else "MISSING") 
 MODEL = "anthropic/claude-3-haiku"
 URL = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -50,3 +51,4 @@ def generate_questions():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=False)
+
